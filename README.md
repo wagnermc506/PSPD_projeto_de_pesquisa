@@ -138,7 +138,7 @@ $ cd /vagrant
 e inicialize o script no Apache Spark:
 
 ```shell
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1 wordCount_ssp.py localhost 9999 all
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1 wordCount_with_kafka.py localhost 9999 all
 ```
 
 Após inicializado, a aplicação Spark começará a contar as palvras enviadas pelo KAFKA de 5 em 5 segundos e irá imprimir na tela:
