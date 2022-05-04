@@ -69,7 +69,7 @@ comente, ou delete a linha.
 
 Em seguida, siga o tutorial para [configurar o spark](https://towardsdatascience.com/setting-up-apache-spark-in-standalone-mode-81efb78c2b52).
 
-Com o ambiente configura, destacam-se os comandos:
+Com o ambiente configurado, destacam-se os comandos:
 
 ```shell
 $ start-all.sh
@@ -89,6 +89,8 @@ O [Apache KAFKA](https://kafka.apache.org/) foi instanciado somente no servidor 
 A instalação e instanciação do servidor do KAFKA pode ser encontrada no [getting started](https://kafka.apache.org/quickstart) do site oficial.
 
 ### Rodando scripts
+
+Os scripts então na pasta [scripts](./scripts/).
 
 #### Parte 1 - Contabilizando palavras de entrada via socket
 
@@ -110,7 +112,7 @@ $ cd /vagrant
 e utilize o comando:
 
 ```shell
-$ spark-submit wordCount.py
+$ spark-submit scripts/wordCount.py
 ```
 
 _Obs.: o diretório `/vagrant` é um diretório especial que funciona como um volume para o diretório da máquina host onde está o arquivo `Vagrantfile`._
@@ -138,7 +140,7 @@ $ cd /vagrant
 e inicialize o script no Apache Spark:
 
 ```shell
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1 wordCount_with_kafka.py localhost 9999 all
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.1 scripts/wordCount_with_kafka.py localhost 9999 all
 ```
 
 Após inicializado, a aplicação Spark começará a contar as palvras enviadas pelo KAFKA de 5 em 5 segundos e irá imprimir na tela:
